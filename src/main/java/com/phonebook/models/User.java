@@ -1,4 +1,4 @@
-package com.phonebook.test;
+package com.phonebook.models;
 
 public class User {
     private  String email;
@@ -21,4 +21,6 @@ public class User {
     public String getPassword() {
         return password;
     }
+
+
 }

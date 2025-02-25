@@ -1,5 +1,7 @@
 package com.phonebook.test;
 
+import com.phonebook.models.Contact;
+import com.phonebook.models.User;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -9,29 +11,32 @@ public class AddContactTests extends TestBase{
 
     @BeforeMethod
     public void ensurePrecondition(){
-        clickOnLoginLink();
-        fillLoginRegisterForm(new User().setEmail("pamparampa@gm.com")
+        if(!app.getUser().isLoginLinkPresent()){
+            app.getUser().clickOnSignOutButton();
+        }
+        app.getUser().clickOnLoginLink();
+        app.getUser().fillLoginRegisterForm(new User().setEmail("pamparampa@gm.com")
                 .setPassword("govnovoZZ228$"));
-        clickOnLoginButton();
+        app.getUser().clickOnLoginButton();
     }
 
     @Test
     public void AddContactPositiveTest(){
-        clickOnAddLink();
-        fillAddContactForm(new Contact()
+        app.getContact().clickOnAddLink();
+        app.getContact().fillAddContactForm(new Contact()
                 .setName("Karhhl")
                 .setLastName("Kirov")
                 .setPhone("98787676543")
                 .setEmail("ystal@gmail.com")
                 .setAddress("tuevakukueva 18")
                 .setDescription("chto to"));
-        clickOnSaveButton();
-        Assert.assertTrue(isContactCreated("Karhhl"));
+        app.getContact().clickOnSaveButton();
+        Assert.assertTrue(app.getContact().isContactCreated("Karhhl"));
     }
 
     @AfterMethod
     public void postConditions(){
-        removeContact();
+        app.getContact().removeContact();
     }
 
 
