@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.phonebook.test.AddContactTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-02-27T09:54:59" hostname="ANDREY" time="1.481">
+  <properties/>
+  <testcase name="AddContactPositiveTest" classname="com.phonebook.test.AddContactTests" time="1.481"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
