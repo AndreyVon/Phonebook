@@ -13,6 +13,15 @@ public class Contact {
         return this;
     }
 
+    @Override
+    public String toString() {
+        return "Contact{" +
+                "name='" + name + '\'' +
+                ", phone='" + phone + '\'' +
+                ", email='" + email + '\'' +
+                '}';
+    }
+
     public Contact setLastName(String lastName) {
         this.lastName = lastName;
         return this;
